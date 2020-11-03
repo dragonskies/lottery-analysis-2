@@ -48,7 +48,7 @@ class MyFrame(wx.Frame):
 
     def __set_properties(self):
         # begin wxGlade: MyFrame.__set_properties
-        self.SetTitle("frame")
+        self.SetTitle("Lottery Analysis")
         self.grid_1.CreateGrid(10, 0)
         # end wxGlade
 
@@ -69,7 +69,8 @@ class MyFrame(wx.Frame):
         event.Skip()
 
     def ExitApp(self, event):  # wxGlade: MyFrame.<event_handler>
-        print("Event handler 'ExitApp' not implemented!")
+        #print("Event handler 'ExitApp' not implemented!")
+        wx.Exit()
         event.Skip()
 
     def DoAboutDialog(self, event):  # wxGlade: MyFrame.<event_handler>
