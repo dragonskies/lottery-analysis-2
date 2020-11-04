@@ -6,6 +6,7 @@
 
 import wx
 import wx.grid
+import AboutDialog
 
 # begin wxGlade: dependencies
 # end wxGlade
@@ -75,6 +76,10 @@ class MyFrame(wx.Frame):
 
     def DoAboutDialog(self, event):  # wxGlade: MyFrame.<event_handler>
         print("Event handler 'DoAboutDialog' not implemented!")
+        about_me = AboutDialog.AboutDialog(self)
+        about_me.set_description("Analysis of the lottery")
+        about_me.set_details("Programmer: Tim Davis\nRedesigned 04 Nov 2020")
+        about_me.Show()
         event.Skip()
 
 # end of class MyFrame
