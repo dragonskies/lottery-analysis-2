@@ -7,6 +7,7 @@
 import wx
 import wx.grid
 import AboutDialog
+import database
 
 # begin wxGlade: dependencies
 # end wxGlade
@@ -41,16 +42,29 @@ class MyFrame(wx.Frame):
         self.frame_menubar_copy.Append(wxglade_tmp_menu, "Help")
         self.SetMenuBar(self.frame_menubar_copy)
         # Menu Bar end
+        self.frame_1_statusbar = self.CreateStatusBar(1, 0)
 
         self.__set_properties()
         self.__do_layout()
+        self.db_instance = database.database("localhost", "tim", "@sim0v73")
+
 
         # end wxGlade
 
     def __set_properties(self):
         # begin wxGlade: MyFrame.__set_properties
         self.SetTitle("Lottery Analysis")
-        self.grid_1.CreateGrid(10, 0)
+        self.grid_1.CreateGrid(10, 7)
+        self.grid_1.SetColLabelValue(0, "Date")
+        self.grid_1.SetColLabelValue(1, "First")
+        self.grid_1.SetColLabelValue(2, "Second")
+        self.grid_1.SetColLabelValue(3, "Third")
+        self.grid_1.SetColLabelValue(4, "Fourth")
+        self.grid_1.SetColLabelValue(5, "Fifth")
+        self.grid_1.SetColLabelValue(6, "Powerball")
+        frame_1_statusbar_fields = ["frame_1_statusbar"]
+        for i in range(len(frame_1_statusbar_fields)):
+            self.frame_1_statusbar.SetStatusText(frame_1_statusbar_fields[i], i)
         # end wxGlade
 
     def __do_layout(self):
