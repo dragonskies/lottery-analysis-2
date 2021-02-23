@@ -46,7 +46,7 @@ class MyFrame(wx.Frame):
 
         self.__set_properties()
         self.__do_layout()
-        self.db_instance = database.database("localhost", "tim", "@sim0v73")
+        self.db_instance = database.database("192.168.1.8", "myserver", "webserver")
 
 
         # end wxGlade
